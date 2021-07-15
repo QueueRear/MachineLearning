@@ -26,4 +26,11 @@
             $$ b^1 \leftarrow b^0 - η \left.\tfrac{\partial L}{\partial b}\right|_{b=b^0} $$
             - 重新计算新的 $\{w, b\}$ 对应的微分。
             - 循环往复直至得到一个局部最优解。
+            > 此处的偏微分分别为
+            $\tfrac{\partial L}{\partial w}=\sum\limits_n 2(\hat{y}^n - (b + w \cdot\ x_0^n))(-x_0^n) $
+            $\tfrac{\partial L}{\partial w}=\sum\limits_n 2(\hat{y}^n - (b + w \cdot\ x_0^n))(-1) $
         - 在线性回归模型中的损失函数是一个凸函数，所以不会有局部最优解的情况。
+    - **评估误差（Error）**
+        - 在训练集上的平均误差 $\frac {1}{n} \sum\limits_{i=1}^{n} e^i$，其中 $e^i$ 是训练集中各对象与模型估测的误差
+        - **泛化性能（Generalization）**：在测试集上的表现。这是更需要关心的问题。
+        $\frac {1}{n} \sum\limits_{i=1}^{n} e^i$，其中 $e^i$ 是测试集中各对象与模型估测的误差。
